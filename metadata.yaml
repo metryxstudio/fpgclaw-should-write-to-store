@@ -1,5 +1,5 @@
 homepage: "https://github.com/metryxstudio/fpgclaw-should-write-to-store"
 documentation: "https://github.com/metryxstudio/fpgclaw-should-write-to-store#readme"
 versions:
-  - sha: # Add your commit SHA after pushing to GitHub
+  - sha: 5f80ffa612c4393d1280fb68ee6d5428d405ce20
     changeNotes: "Initial release"
