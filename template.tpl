@@ -9,7 +9,15 @@ ___INFO___
   "description": "Returns true if FPGCLAW should be written to Store (new gclid, first time, and within max age)",
   "containerContexts": [
     "SERVER"
-  ]
+  ],
+  "categories": ["UTILITY"],
+  "brand": {
+    "id": "metryxstudio",
+    "displayName": "Metryx Studio"
+  },
+  "termsOfService": {
+    "accept": true
+  }
 }
 
 
