@@ -28,7 +28,7 @@ ___TEMPLATE_PARAMETERS___
     "name": "storedFpgclaw",
     "displayName": "Stored FPGCLAW (from Store)",
     "simpleValueType": true,
-    "help": "Variable that reads FPGCLAW from Stape Store (SSL - FPGCLAW)"
+    "help": "Variable that reads FPGCLAW from your key-value store (Firestore, Stape Store, etc.)"
   },
   {
     "type": "SELECT",

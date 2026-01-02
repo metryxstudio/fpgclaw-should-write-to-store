@@ -1,6 +1,6 @@
 # FPGCLAW - Should Write to Store
 
-A server-side Google Tag Manager variable template that determines whether an FPGCLAW cookie value should be written to Stape Store.
+A server-side Google Tag Manager variable template that determines whether an FPGCLAW cookie value should be written to a key-value store (Firestore, Redis, Stape Store, etc.).
 
 ## Overview
 
@@ -9,7 +9,7 @@ This variable returns `true` only when all conditions are met:
 - The gclid is new (different from stored value) or no stored value exists
 - The FPGCLAW is within the configured maximum age limit
 
-Use this template to prevent unnecessary Store write operations and avoid resetting TTL on existing values.
+Use this template to prevent unnecessary write operations and avoid resetting TTL on existing values.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Use this template to prevent unnecessary Store write operations and avoid resett
 | Field | Description |
 |-------|-------------|
 | **Current FPGCLAW (from Event Data)** | Variable that reads `custom_fpgclaw` directly from event data |
-| **Stored FPGCLAW (from Store)** | Variable that reads FPGCLAW from Stape Store |
+| **Stored FPGCLAW (from Store)** | Variable that reads FPGCLAW from your key-value store |
 | **Max FPGCLAW Age** | Maximum age limit: No limit, 30/60/90 days, or Custom |
 | **Custom Max Age (days)** | Number of days (only visible when "Custom" is selected) |
 
@@ -43,7 +43,7 @@ Example: `2.1.kCj0KCQiA...TEST$i1767170762`
 1. Create a variable using this template
 2. Configure inputs:
    - Current FPGCLAW: `{{Event Data - custom_fpgclaw}}`
-   - Stored FPGCLAW: `{{Stape Store - FPGCLAW}}`
+   - Stored FPGCLAW: `{{Your Store Variable - FPGCLAW}}` (Firestore, Redis, Stape Store, etc.)
    - Max Age: Select desired limit
 3. Use as a trigger condition for your Store Write tag:
    - Condition: `{{FPGCLAW - Should Write to Store}}` equals `true`
